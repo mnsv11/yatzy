@@ -1,0 +1,12 @@
+Detta är en enkel vesion av ett Yatzy spel för 2 personer.
+För att spela, kom överens vem som är spelare 1 och spelare 2.
+Spelare 1 börjar med att trycka på "Roll" knappen, väljer vad 
+han/hon vill spara, upprepa 2 gånger till och turen går över till
+spelare 2 som i sin tur upprepar vad spelare 1 gjorde.
+SÅ forsätter spelet till man har nått slutet och någon har vunnit eller
+blivit oavgjort.
+
+Spelet är integrerat på en annan sida så är det svårt att installera det någon
+annanstans efter som det använde style från en annan stylesheet än vad som finns 
+upplagt här.
+Har inte hafttid att göra det helt frisående, men ska försöka hinna i framtiden.

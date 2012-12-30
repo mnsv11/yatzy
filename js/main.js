@@ -355,7 +355,12 @@ $(document).ready(function(){
 			totsumS1.innerHTML = upperSumP1;
 			totsumS2.innerHTML = upperSumP2;
 			var winner = checkWinner(upperSumP1,upperSumP2)
-			text.innerHTML = 'Spelet är slut, spelare ' + winner + ' vann';
+			if(winner === 0){
+				text.innerHTML = 'Spelet är slut, det blev oavgjort!!';
+			}
+			else{
+				text.innerHTML = 'Spelet är slut, spelare ' + winner + ' vann';
+			}
 		}
 	}
 	else{
@@ -825,8 +830,12 @@ $(document).ready(function(){
   	  if(p1<p2){
   	  	winner = 2;	  
   	  }
-  	  else{
+  	  else if(p1>p2){
   	  	winner = 1;	  
+  	  }
+  	  else
+  	  {
+  	  	  winner = 0;
   	  }
   	  return winner;
   	  
