@@ -41,6 +41,7 @@
      
     <form>
    	 <input id='roll' type='button' value='Roll' /> <p id='text' class='red'>Spelare 1 slå första slaget på ettor</p>
+
    </form>
    <hr>
    

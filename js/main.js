@@ -1,80 +1,294 @@
  /**
  * Place your JS-code here.
  */
-$(document).ready(function(){
-  'use strict';
-  var step,target, target1,target2,target3,target4,target5,text,plats = 'ettor', 
-      area, sum,check1,check2,check3,check4,check5,check6,nrOfThrow = 0,
-      player=1,round=1,dice1Sum=0,dice2Sum=0,dice3Sum=0,dice4Sum=0,dice5Sum=0,dice6Sum=0,upperSumP1=0,upperSumP2=0,
-      oneS1,oneS2,twoS1,twoS2,threeS1,threeS2,fourS1,fourS2,fiveS1,fiveS2,sixS1,sixS2,sumS1,sumS2,
-      bonS1,bonS2,parS1,parS2,twoparS1,twoparS2,tretalS1,tretalS2,fyrtalS1,fyrtalS2,smallS1,smallS2,
-      bigS1,bigS2,houseS1,houseS2,chansS1,chansS2,yatzyS1,yatzyS2,totsumS1,totsumS2;
+$(document).ready(function () {
+    'use strict';
+    var step, target, target1, target2, target3, target4, target5, text, plats = 'ettor',
+        area, sum, check1, check2, check3, check4, check5, check6, nrOfThrow = 0,
+        player = 1, round = 1, dice1Sum = 0, dice2Sum = 0, dice3Sum = 0, dice4Sum = 0, dice5Sum = 0, dice6Sum = 0, upperSumP1 = 0, upperSumP2 = 0,
+        oneS1, oneS2, twoS1, twoS2, threeS1, threeS2, fourS1, fourS2, fiveS1, fiveS2, sixS1, sixS2, sumS1, sumS2,
+        bonS1, bonS2, parS1, parS2, twoparS1, twoparS2, tretalS1, tretalS2, fyrtalS1, fyrtalS2, smallS1, smallS2,
+        bigS1, bigS2, houseS1, houseS2, chansS1, chansS2, yatzyS1, yatzyS2, totsumS1, totsumS2;
+
+    text = document.getElementById('text');
+    target1 = document.getElementById('d1');
+    target2 = document.getElementById('d2');
+    target3 = document.getElementById('d3');
+    target4 = document.getElementById('d4');
+    target5 = document.getElementById('d5');
+    area = document.getElementById('flash');
+    oneS1 = document.getElementById('oneS1');
+    oneS2 = document.getElementById('oneS2');
+    twoS1 = document.getElementById('twoS1');
+    twoS2 = document.getElementById('twoS2');
+    threeS1 = document.getElementById('threeS1');
+    threeS2 = document.getElementById('threeS2');
+    fourS1 = document.getElementById('fourS1');
+    fourS2 = document.getElementById('fourS2');
+    fiveS1 = document.getElementById('fiveS1');
+    fiveS2 = document.getElementById('fiveS2');
+    sixS1 = document.getElementById('sixS1');
+    sixS2 = document.getElementById('sixS2');
+    sumS1 = document.getElementById('sumS1');
+    sumS2 = document.getElementById('sumS2');
+    bonS1 = document.getElementById('bonS1');
+    bonS2 = document.getElementById('bonS2');
+    parS1 = document.getElementById('parS1');
+    parS2 = document.getElementById('parS2');
+    twoparS1 = document.getElementById('twoparS1');
+    twoparS2 = document.getElementById('twoparS2');
+    tretalS1 = document.getElementById('tretalS1');
+    tretalS2 = document.getElementById('tretalS2');
+    fyrtalS1 = document.getElementById('fyrtalS1');
+    fyrtalS2 = document.getElementById('fyrtalS2');
+    smallS1 = document.getElementById('smallS1');
+    smallS2 = document.getElementById('smallS2');
+    bigS1 = document.getElementById('bigS1');
+    bigS2 = document.getElementById('bigS2');
+    houseS1 = document.getElementById('houseS1');
+    houseS2 = document.getElementById('houseS2');
+    chansS1 = document.getElementById('chansS1');
+    chansS2 = document.getElementById('chansS2');
+    yatzyS1 = document.getElementById('yatzyS1');
+    yatzyS2 = document.getElementById('yatzyS2');
+    totsumS1 = document.getElementById('totsumS1');
+    totsumS2 = document.getElementById('totsumS2');
+    
+  
+  d1.onclick = function(){
+  	  var checking = document.getElementById("checkbox1").checked
+  	  
+  	  if(checking === false){
+  	  	document.getElementById("checkbox1").checked = true;
+  	  	checking = true;
+  	  }
+  	  else if(checking === true){
+  	  	  document.getElementById("checkbox1").checked = false;
+  	  	  checking = false;
+  	  }
+  	  
+  }
+  d2.onclick = function(){
+  	  var checking = document.getElementById("checkbox2").checked
+  	  
+  	  if(checking === false){
+  	  	document.getElementById("checkbox2").checked = true;
+  	  	checking = true;
+  	  }
+  	  else if(checking === true){
+  	  	  document.getElementById("checkbox2").checked = false;
+  	  	  checking = false;
+  	  }
+  	  
+  }  
+  d3.onclick = function(){
+  	  var checking = document.getElementById("checkbox3").checked
+  	  
+  	  if(checking === false){
+  	  	document.getElementById("checkbox3").checked = true;
+  	  	checking = true;
+  	  }
+  	  else if(checking === true){
+  	  	  document.getElementById("checkbox3").checked = false;
+  	  	  checking = false;
+  	  }
+  	  
+  }  
+  d4.onclick = function(){
+  	  var checking = document.getElementById("checkbox4").checked
+  	  
+  	  if(checking === false){
+  	  	document.getElementById("checkbox4").checked = true;
+  	  	checking = true;
+  	  }
+  	  else if(checking === true){
+  	  	  document.getElementById("checkbox4").checked = false;
+  	  	  checking = false;
+  	  }
+  
+  }  
+  d5.onclick = function(){
+  	  var checking = document.getElementById("checkbox5").checked
+  	  
+  	  if(checking === false){
+  	  	document.getElementById("checkbox5").checked = true;
+  	  	checking = true;
+  	  }
+  	  else if(checking === true){
+  	  	  document.getElementById("checkbox5").checked = false;
+  	  	  checking = false;
+  	  }
+  
+  }
 
   
-  text = document.getElementById('text');
-  target1 = document.getElementById('d1');
-  target2 = document.getElementById('d2');
-  target3 = document.getElementById('d3');
-  target4 = document.getElementById('d4');
-  target5 = document.getElementById('d5');
-  area = document.getElementById('flash');
-  oneS1 = document.getElementById('oneS1');
-  oneS2 = document.getElementById('oneS2');
-  twoS1 = document.getElementById('twoS1');
-  twoS2 = document.getElementById('twoS2');
-  threeS1 = document.getElementById('threeS1');
-  threeS2 = document.getElementById('threeS2');
-  fourS1 = document.getElementById('fourS1');
-  fourS2 = document.getElementById('fourS2');
-  fiveS1 = document.getElementById('fiveS1');
-  fiveS2 = document.getElementById('fiveS2');
-  sixS1 = document.getElementById('sixS1');
-  sixS2 = document.getElementById('sixS2');
-  sumS1 = document.getElementById('sumS1');
-  sumS2 = document.getElementById('sumS2');
-  bonS1 = document.getElementById('bonS1');
-  bonS2 = document.getElementById('bonS2');
-  parS1 = document.getElementById('parS1');
-  parS2 = document.getElementById('parS2');
-  twoparS1 = document.getElementById('twoparS1');
-  twoparS2 = document.getElementById('twoparS2');
-  tretalS1 = document.getElementById('tretalS1');
-  tretalS2 = document.getElementById('tretalS2');
-  fyrtalS1 = document.getElementById('fyrtalS1');
-  fyrtalS2 = document.getElementById('fyrtalS2');
-  smallS1 = document.getElementById('smallS1');
-  smallS2 = document.getElementById('smallS2');
-  bigS1 = document.getElementById('bigS1');
-  bigS2 = document.getElementById('bigS2');
-  houseS1 = document.getElementById('houseS1');
-  houseS2 = document.getElementById('houseS2');
-  chansS1 = document.getElementById('chansS1');
-  chansS2 = document.getElementById('chansS2');
-  yatzyS1 = document.getElementById('yatzyS1');
-  yatzyS2 = document.getElementById('yatzyS2');
-  totsumS1 = document.getElementById('totsumS1');
-  totsumS2 = document.getElementById('totsumS2');
-  	 
-  check1 = document.getElementById("checkbox1").checked=false;
-  check2 = document.getElementById("checkbox2").checked=false;
-  check3 = document.getElementById("checkbox3").checked=false;
-  check4 = document.getElementById("checkbox4").checked=false;
-  check5 = document.getElementById("checkbox5").checked=false;
+  function setDice(summa) {
+    	    
+ 
+  		    if (summa === 1) {
+		          target.className = 'dice one';
+		      }
+		    if (summa === 2) {
+			  target.className = 'dice two';
+		      }
+		    if (summa === 3) {
+			  target.className = 'dice three';
+		      }
+		    if (summa === 4) {
+			  target.className = 'dice four';
+		      }
+		    if (summa === 5) {
+			  target.className = 'dice five';
+		      }
+		    if (summa === 6) {
+			  target.className = 'dice six';
+		      }
+		
+		      //console.log('summa ' + sum);		 
+  	  
+  }
   
+  function rollDice(){
+    check1 = document.getElementById("checkbox1").checked;
+    check2 = document.getElementById("checkbox2").checked;
+    check3 = document.getElementById("checkbox3").checked;
+    check4 = document.getElementById("checkbox4").checked;
+    check5 = document.getElementById("checkbox5").checked;
+  	  
+    if(check1 === false || nrOfThrow < 1){
+  	  var summa = random(1,7)
+  	 	    if (summa === 1) {
+		          target1.className = 'dice one';
+		      }
+		    if (summa === 2) {
+			  target1.className = 'dice two';
+		      }
+		    if (summa === 3) {
+			  target1.className = 'dice three';
+		      }
+		    if (summa === 4) {
+			  target1.className = 'dice four';
+		      }
+		    if (summa === 5) {
+			  target1.className = 'dice five';
+		      }
+		    if (summa === 6) {
+			  target1.className = 'dice six';
+		      }
+    }
+    if(check2 === false || nrOfThrow < 1){
+  	   summa = random(1,7)
+  	 	    if (summa === 1) {
+		          target2.className = 'dice one';
+		      }
+		    if (summa === 2) {
+			  target2.className = 'dice two';
+		      }
+		    if (summa === 3) {
+			  target2.className = 'dice three';
+		      }
+		    if (summa === 4) {
+			  target2.className = 'dice four';
+		      }
+		    if (summa === 5) {
+			  target2.className = 'dice five';
+		      }
+		    if (summa === 6) {
+			  target2.className = 'dice six';
+		      }
+    }
+    if(check3 === false || nrOfThrow < 1){
+	   summa = random(1,7)
+  	 	    if (summa === 1) {
+		          target3.className = 'dice one';
+		      }
+		    if (summa === 2) {
+			  target3.className = 'dice two';
+		      }
+		    if (summa === 3) {
+			  target3.className = 'dice three';
+		      }
+		    if (summa === 4) {
+			  target3.className = 'dice four';
+		      }
+		    if (summa === 5) {
+			  target3.className = 'dice five';
+		      }
+		    if (summa === 6) {
+			  target3.className = 'dice six';
+		      }
+    }
+    if(check4 === false || nrOfThrow < 1){
+	    summa = random(1,7)
+  	 	    if (summa === 1) {
+		          target4.className = 'dice one';
+		      }
+		    if (summa === 2) {
+			  target4.className = 'dice two';
+		      }
+		    if (summa === 3) {
+			  target4.className = 'dice three';
+		      }
+		    if (summa === 4) {
+			  target4.className = 'dice four';
+		      }
+		    if (summa === 5) {
+			  target4.className = 'dice five';
+		      }
+		    if (summa === 6) {
+			  target4.className = 'dice six';
+		      }
+    }
+    if(check5 === false || nrOfThrow < 1){
+             summa = random(1,7)
+  	 	    if (summa === 1) {
+		          target5.className = 'dice one';
+		      }
+		    if (summa === 2) {
+			  target5.className = 'dice two';
+		      }
+		    if (summa === 3) {
+			  target5.className = 'dice three';
+		      }
+		    if (summa === 4) {
+			  target5.className = 'dice four';
+		      }
+		    if (summa === 5) {
+			  target5.className = 'dice five';
+		      }
+		    if (summa === 6) {
+			  target5.className = 'dice six';
+		      }
+    }
 
-  roll.onclick = function() {
-  check1 = document.getElementById("checkbox1").checked;
-  check2 = document.getElementById("checkbox2").checked;
-  check3 = document.getElementById("checkbox3").checked;
-  check4 = document.getElementById("checkbox4").checked;
-  check5 = document.getElementById("checkbox5").checked;
+  }
+  
+  var end;
+  roll.onclick = function(){
+  	  
+  	end = setInterval(function(){rollDice()},100);
+  	
+  	setTimeout(function(){throwing()},2000);
+  }
+  
+  
+  function throwing() {
+  	  
+  	  clearInterval(end)
+  	  
+    check1 = document.getElementById("checkbox1").checked;
+    check2 = document.getElementById("checkbox2").checked;
+    check3 = document.getElementById("checkbox3").checked;
+    check4 = document.getElementById("checkbox4").checked;
+    check5 = document.getElementById("checkbox5").checked;
+
 		  
   	  var count = 1;
   	  /**slår alla 5 tärningarna, sätter alltid värde på target första rundan,
   	     sedan beror det på om någon checkbox är i klickad eller inte*/
   	  while(count < 6){
   	  	  
-  	  	  sum = random(1,7);
+  	  	 sum = random(1,7);
   	  	
   	  	  if(count === 1){
   	  	  	  if(check1 === false || nrOfThrow < 1){
@@ -108,40 +322,13 @@ $(document).ready(function(){
   	  	  }
 
 
-  	  	  
+  	  	 
   	  	  
   	  if(target != "")//om target inte är tom så uppdateras tärningen.
-  	  {	  
-		  if(sum === 1)
-		  {
-			 target.className='dice one'; 
-		
-		  }
-		  if(sum === 2)
-		  {
-			 target.className='dice two'; 
-		
-		  }
-		  if(sum === 3)
-		  {
-			 target.className='dice three'; 
-			
-		  }
-		  if(sum === 4)
-		  {
-			 target.className='dice four'; 
-		  
-		  }
-		  if(sum === 5)
-		  {
-			 target.className='dice five'; 
-		
-		  }
-		  if(sum === 6)
-		  {
-			 target.className='dice six'; 
-		
-		  }
+  	  {
+  	  	  
+  	  	
+		  setDice(sum);
 
   	  
   	  }
@@ -815,7 +1002,7 @@ $(document).ready(function(){
   	var sum = 0;
   	
   	if(dice1 === dice2 && dice1 === dice3 && dice1 === dice4 && dice1 === dice5){
-  		sum = dice1 + dice2 + dice3 + dice4 + dice5;
+  		sum = 50;
   	}
   		
   	  	  
